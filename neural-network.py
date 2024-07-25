@@ -29,7 +29,7 @@ for epoch in range(epochs):
 
     b -= learning_rate * sum(bias_delta) / len(bias_delta) #Updates the bias. 
 
-#print(f"\nw1: {w1:.2f}, w2: {w2:.2f}, b: {b:.2f}")
+print(f"\nw1: {w1:.2f}, w2: {w2:.2f}, b: {b:.2f}")
 
 #Test neural network
 test_inputs = [(0.1600, 0.1391), (0.5600, 0.3046), (0.7600, 0.8013), (0.9600, 0.3046), (0.1600, 0.7185)]
