@@ -4,7 +4,7 @@ inputs = [(0.0000, 0.0000), (0.1600, 0.1556), (0.2400, 0.3543), (0.2800, 0.3709)
 targets = [230, 555, 815, 860, 1140, 1085, 1200, 1330, 1290, 870, 1545, 1480, 1750, 1845, 1790, 1955]
 
 
-weights = [0.0, 0.0] # 
+weights = [0.0, 0.0] # Weight vector, which will be adjusted during the training process.
 b = 0.0 # "b" is our bias term, allowing the model to fit the data more flexibly 
 epochs = 7000 #The number of times we will train our neural network.
 learning_rate = 0.1 
