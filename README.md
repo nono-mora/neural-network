@@ -1,4 +1,4 @@
-# Simple Neural Network Implementation
+# Simple Neural Network Implementation (No libraries)
 
 This Python script demonstrates a basic implementation of a single-layer neural network. The purpose of this code is to showcase the fundamental concepts of neural networks, including forward propagation, backpropagation, and gradient descent.
 
