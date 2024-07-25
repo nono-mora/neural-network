@@ -4,13 +4,13 @@ inputs = [(0.0000, 0.0000), (0.1600, 0.1556), (0.2400, 0.3543), (0.2800, 0.3709)
 targets = [230, 555, 815, 860, 1140, 1085, 1200, 1330, 1290, 870, 1545, 1480, 1750, 1845, 1790, 1955]
 
 
-w1 = 0.1 # "w1" is our slope/weight. 
-w2 = 0.2 # "w2" is our second weight for the second input.
-b = 0.3 # "b" is our bias or y-intercept. 
+w1 = 0.1 # Weight for the first input feature (age)
+w2 = 0.2 # Weight for the second input feature (mileage)
+b = 0.3 # "b" is our bias term, allowing the model to fit the data more flexibly 
 epochs = 7000 #The number of times we will train our neural network.
-learning_rate = 0.1
+learning_rate = 0.1 
 
-def predict(i1, i2):
+def predict(i1, i2): #Predicts the output of the neural network.
     return w1 * i1 + w2 * i2 + b
 
 #Train the network
@@ -21,12 +21,12 @@ for epoch in range(epochs):
     
     #Backpropagation 
     errors_derivative = [2 * (p - t) for p, t in zip(pred, targets)] #Calculates the derivative of the errors.
-    weight1_delta = [e * i[0] for e, i in zip(errors_derivative, inputs)] #Calculates weight delta.
-    weight2_delta = [e * i[1] for e, i in zip(errors_derivative, inputs)] #Calculates weight delta.
+    weight1_delta = [e * i[0] for e, i in zip(errors_derivative, inputs)] #Calculates weight1 delta.
+    weight2_delta = [e * i[1] for e, i in zip(errors_derivative, inputs)] #Calculates weight2 delta.
     bias_delta = [e * 1 for e in errors_derivative] #Calculates bias delta.
 
-    w1 -= learning_rate * sum(weight1_delta) / len(weight1_delta) #Updates the weight. 
-    w2 -= learning_rate * sum(weight2_delta) / len(weight2_delta) #Updates the weight. 
+    w1 -= learning_rate * sum(weight1_delta) / len(weight1_delta) #Updates weight1. 
+    w2 -= learning_rate * sum(weight2_delta) / len(weight2_delta) #Updates weight2. 
     b -= learning_rate * sum(bias_delta) / len(bias_delta) #Updates the bias. 
 
 #print(f"\nw1: {w1:.2f}, w2: {w2:.2f}, b: {b:.2f}")
