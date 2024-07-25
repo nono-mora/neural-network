@@ -4,7 +4,6 @@ This Python script demonstrates a basic implementation of a single-layer neural 
 
 ## Features
 
-- Implementation of a simple neural network with two input neurons and one output neuron
 - Training process using gradient descent
 - Prediction functionality for new inputs
 - Customizable hyperparameters (learning rate, number of epochs)
